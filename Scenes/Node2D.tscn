@@ -1,25 +1,25 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/scripts/Paddle.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Paddle.gd" type="Script" id=1]
 [ext_resource path="res://Assets/paddle.png" type="Texture" id=2]
 [ext_resource path="res://Assets/ball.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 52.4792, 12.3913 )
+extents = Vector2( 52.4305, 12.546 )
 
 [sub_resource type="PhysicsMaterial" id=3]
 friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 11.696
+radius = 11.9441
 
 [node name="Node2D" type="Node2D"]
 
 [node name="World" type="Node" parent="."]
 
 [node name="Paddle" type="KinematicBody2D" parent="World"]
-position = Vector2( 512, 544 )
+position = Vector2( 512, 532 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -32,8 +32,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Ball" type="RigidBody2D" parent="World"]
-position = Vector2( 512, 480 )
-mode = 2
+position = Vector2( 512, 448 )
 physics_material_override = SubResource( 3 )
 gravity_scale = 0.0
 linear_velocity = Vector2( 200, -200 )
@@ -50,7 +49,8 @@ texture = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="Wall" type="StaticBody2D" parent="World"]
-position = Vector2( 11, -11 )
+position = Vector2( -11, 0 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/Wall"]
-polygon = PoolVector2Array( -11, 683, -11, 11, 1013, 11, 1013, 683, 1077, 683, 1077, -53, -75, -53, -75, 683 )
+position = Vector2( -1, 0 )
+polygon = PoolVector2Array( 11, 640, 11, 0, 1035, 0, 1035, 672, 1099, 672, 1099, -64, -52, -64, -52, 640 )
